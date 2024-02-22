@@ -1,15 +1,17 @@
 import React from 'react';
-import {
-  Work_Sans,
-  Spline_Sans_Mono,
-} from 'next/font/google';
+import { Work_Sans, Spline_Sans_Mono } from 'next/font/google';
 import clsx from 'clsx';
 
-import { LIGHT_TOKENS, DARK_TOKENS } from '@/constants';
+import { LIGHT_TOKENS, DARK_TOKENS, BLOG_TITLE } from '@/constants';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import './styles.css';
+
+export const metadata = {
+  title: BLOG_TITLE,
+  description: 'A blog about web development and other things',
+};
 
 const mainFont = Work_Sans({
   subsets: ['latin'],
@@ -30,7 +32,7 @@ function RootLayout({ children }) {
 
   return (
     <html
-      lang="en"
+      lang='en'
       className={clsx(mainFont.variable, monoFont.variable)}
       data-color-theme={theme}
       style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
