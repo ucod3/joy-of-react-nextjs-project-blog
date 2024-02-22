@@ -4,12 +4,8 @@ import BlogHero from '@/components/BlogHero';
 import { BLOG_TITLE } from '@/constants';
 import CodeSnippet from '@/components/CodeSnippet';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import DivisionGroupsDemo from '@/components/DivisionGroupsDemo';
 import styles from './postSlug.module.css';
-import dynamic from 'next/dynamic';
-
-const DivisionGroupsDemo = dynamic(() =>
-  import('@/components/DivisionGroupsDemo'),
-);
 
 export async function generateMetadata({ params }) {
   const { frontmatter } = await loadBlogPost(params.postSlug);
