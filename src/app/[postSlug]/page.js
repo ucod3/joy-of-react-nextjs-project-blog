@@ -3,14 +3,13 @@ import { loadBlogPost } from '@/helpers/file-helpers';
 import BlogHero from '@/components/BlogHero';
 import { BLOG_TITLE } from '@/constants';
 import CodeSnippet from '@/components/CodeSnippet';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import styles from './postSlug.module.css';
+import dynamic from 'next/dynamic';
 
 const DivisionGroupsDemo = dynamic(() =>
   import('@/components/DivisionGroupsDemo'),
 );
-
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import styles from './postSlug.module.css';
-import dynamic from 'next/dynamic';
 
 export async function generateMetadata({ params }) {
   const { frontmatter } = await loadBlogPost(params.postSlug);
