@@ -7,6 +7,7 @@ import {
   DARK_TOKENS,
   BLOG_TITLE,
   COLOR_THEME_COOKIE_NAME,
+  BLOG_DESCRIPTION,
 } from '@/constants';
 
 import Header from '@/components/Header';
@@ -16,7 +17,7 @@ import './styles.css';
 
 export const metadata = {
   title: BLOG_TITLE,
-  description: 'A blog about web development and other things',
+  description: BLOG_DESCRIPTION,
 };
 
 const mainFont = Work_Sans({
